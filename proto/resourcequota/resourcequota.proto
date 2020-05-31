@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package resourcequota;
+import "github.com/wangrenyi/kmpgo/proto/common/common.proto";
+
+// protoc --proto_path=. --go_out=plugins=grpc:. github.com/wangrenyi/kmpgo/proto/resourcequota/resourcequota.proto
+service ResourceQuotaInterface{
+  rpc ResourceQuotaCreate(common.InvokeServiceRequest)  returns (common.InvokeServiceResponse){};
+  rpc ResourceQuotaUpdate(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc ResourceQuotaUpdateStatus(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc ResourceQuotaDelete(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc ResourceQuotaDeleteCollection(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc ResourceQuotaGet(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc ResourceQuotaList(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc ResourceQuotaWatch(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc ResourceQuotaPatch(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+
+  //ResourceQuota expansion
+}

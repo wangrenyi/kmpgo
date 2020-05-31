@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+// persistent volume
+package pv;
+import "github.com/wangrenyi/kmpgo/proto/common/common.proto";
+
+// protoc --proto_path=. --go_out=plugins=grpc:. github.com/wangrenyi/kmpgo/proto/pv/pv.proto
+service PVInterface{
+  rpc PVCreate(common.InvokeServiceRequest)  returns (common.InvokeServiceResponse){};
+  rpc PVUpdate(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc PVUpdateStatus(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc PVDelete(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc PVDeleteCollection(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc PVGet(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc PVList(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc PVWatch(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc PVPatch(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+
+  //PV expansion
+}

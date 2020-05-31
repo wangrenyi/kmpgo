@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package limitrange;
+import "github.com/wangrenyi/kmpgo/proto/common/common.proto";
+
+// protoc --proto_path=. --go_out=plugins=grpc:. github.com/wangrenyi/kmpgo/proto/limitrange/limitrange.proto
+service LimitRangeInterface{
+  rpc LimitRangeCreate(common.InvokeServiceRequest)  returns (common.InvokeServiceResponse){};
+  rpc LimitRangeUpdate(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc LimitRangeDelete(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc LimitRangeDeleteCollection(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc LimitRangeGet(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc LimitRangeList(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc LimitRangeWatch(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc LimitRangePatch(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+
+  //LimitRange expansion
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package service;
+import "github.com/wangrenyi/kmpgo/proto/common/common.proto";
+
+// protoc --proto_path=. --go_out=plugins=grpc:. github.com/wangrenyi/kmpgo/proto/service/service.proto
+service ServiceInterface{
+  rpc ServiceCreate(common.InvokeServiceRequest)  returns (common.InvokeServiceResponse){};
+  rpc ServiceUpdate(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc ServiceUpdateStatus(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc ServiceDelete(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc ServiceGet(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc ServiceList(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc ServiceWatch(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc ServicePatch(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+
+  //Service expansion
+  rpc ServiceProxyGet(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+}

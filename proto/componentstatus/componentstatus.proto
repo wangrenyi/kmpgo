@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package componentstatus;
+import "github.com/wangrenyi/kmpgo/proto/common/common.proto";
+
+// protoc --proto_path=. --go_out=plugins=grpc:. github.com/wangrenyi/kmpgo/proto/componentstatus/componentstatus.proto
+service ComponentStatusInterface{
+  rpc ComponentStatusCreate(common.InvokeServiceRequest)  returns (common.InvokeServiceResponse){};
+  rpc ComponentStatusUpdate(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc ComponentStatusDelete(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc ComponentStatusDeleteCollection(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc ComponentStatusGet(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc ComponentStatusList(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc ComponentStatusWatch(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc ComponentStatusPatch(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+
+  //ComponentStatus expansion
+}

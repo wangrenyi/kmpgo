@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package configmap;
+import "github.com/wangrenyi/kmpgo/proto/common/common.proto";
+
+// protoc --proto_path=. --go_out=plugins=grpc:. github.com/wangrenyi/kmpgo/proto/configmap/configmap.proto
+service ConfigMapInterface{
+  rpc ConfigMapCreate(common.InvokeServiceRequest)  returns (common.InvokeServiceResponse){};
+  rpc ConfigMapUpdate(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc ConfigMapDelete(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc ConfigMapDeleteCollection(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc ConfigMapGet(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc ConfigMapList(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc ConfigMapWatch(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc ConfigMapPatch(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+
+  //ConfigMap expansion
+}

@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+//replication controller
+package rc;
+import "github.com/wangrenyi/kmpgo/proto/common/common.proto";
+
+// protoc --proto_path=. --go_out=plugins=grpc:. github.com/wangrenyi/kmpgo/proto/rc/rc.proto
+service RCInterface{
+  rpc RCCreate(common.InvokeServiceRequest)  returns (common.InvokeServiceResponse){};
+  rpc RCUpdate(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc RCUpdateStatus(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc RCDelete(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc RCDeleteCollection(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc RCGet(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc RCList(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc RCWatch(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc RCPatch(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc RCGetScale(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc RCUpdateScale(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+
+  //RC expansion
+}

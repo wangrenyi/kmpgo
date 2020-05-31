@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+// persistent volume claim
+package pvc;
+import "github.com/wangrenyi/kmpgo/proto/common/common.proto";
+
+// protoc --proto_path=. --go_out=plugins=grpc:. github.com/wangrenyi/kmpgo/proto/pvc/pvc.proto
+service PVCInterface{
+  rpc PVCCreate(common.InvokeServiceRequest)  returns (common.InvokeServiceResponse){};
+  rpc PVCUpdate(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc PVCUpdateStatus(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc PVCDelete(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc PVCDeleteCollection(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc PVCGet(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc PVCList(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc PVCWatch(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc PVCPatch(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+
+  //PVC expansion
+}
