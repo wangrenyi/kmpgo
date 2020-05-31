@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package namespace;
+import "github.com/wangrenyi/kmpgo/proto/common/common.proto";
+
+// protoc --proto_path=. --go_out=plugins=grpc:. github.com/wangrenyi/kmpgo/proto/namespace/namespace.proto
+service NamespaceInterface{
+  rpc NamespaceCreate(common.InvokeServiceRequest)  returns (common.InvokeServiceResponse){};
+  rpc NamespaceUpdate(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc NamespaceUpdateStatus(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc NamespaceDelete(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc NamespaceGet(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc NamespaceList(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc NamespaceWatch(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc NamespacePatch(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+
+  //Namespace expansion
+  rpc NamespaceFinalize(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+}

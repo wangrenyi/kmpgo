@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package podtemplate;
+import "github.com/wangrenyi/kmpgo/proto/common/common.proto";
+
+// protoc --proto_path=. --go_out=plugins=grpc:. github.com/wangrenyi/kmpgo/proto/podtemplate/podtemplate.proto
+service PodTemplateInterface{
+  rpc PodTemplateCreate(common.InvokeServiceRequest)  returns (common.InvokeServiceResponse){};
+  rpc PodTemplateUpdate(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc PodTemplateDelete(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc PodTemplateDeleteCollection(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc PodTemplateGet(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc PodTemplateList(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc PodTemplateWatch(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc PodTemplatePatch(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+
+  //PodTemplate expansion
+}

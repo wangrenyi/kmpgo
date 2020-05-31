@@ -47,7 +47,7 @@ func NewServer() *KmpServer {
 	if err != nil {
 		panic(err)
 	}
-	pod.RegisterPodInterfaceServer(grpcServer, &connector.KmpNodeServer{Client: kubeClient})
+	pod.RegisterPodInterfaceServer(grpcServer, &connector.KmpPodServer{Client: kubeClient})
 
 	return &KmpServer{grpcServer: grpcServer}
 }

@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package event;
+import "github.com/wangrenyi/kmpgo/proto/common/common.proto";
+
+// protoc --proto_path=. --go_out=plugins=grpc:. github.com/wangrenyi/kmpgo/proto/event/event.proto
+service EventInterface{
+  rpc EventCreate(common.InvokeServiceRequest)  returns (common.InvokeServiceResponse){};
+  rpc EventUpdate(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc EventDelete(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc EventDeleteCollection(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc EventGet(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc EventList(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc EventWatch(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc EventPatch(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+
+  //Event expansion
+  rpc CreateWithEventNamespace(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc UpdateWithEventNamespace(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc PatchWithEventNamespace(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc EventSearch(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc EventGetFieldSelector(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+}

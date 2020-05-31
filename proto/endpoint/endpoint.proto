@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package endpoint;
+import "github.com/wangrenyi/kmpgo/proto/common/common.proto";
+
+// protoc --proto_path=. --go_out=plugins=grpc:. github.com/wangrenyi/kmpgo/proto/endpoint/endpoint.proto
+service EndpointInterface{
+  rpc EndpointCreate(common.InvokeServiceRequest)  returns (common.InvokeServiceResponse){};
+  rpc EndpointUpdate(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc EndpointDelete(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc EndpointDeleteCollection(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc EndpointGet(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc EndpointList(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc EndpointWatch(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc EndpointPatch(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+
+  //Endpoint expansion
+}

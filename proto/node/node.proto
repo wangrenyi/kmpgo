@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package node;
+import "github.com/wangrenyi/kmpgo/proto/common/common.proto";
+
+// protoc --proto_path=. --go_out=plugins=grpc:. github.com/wangrenyi/kmpgo/proto/node/node.proto
+service NodeInterface{
+  rpc NodeCreate(common.InvokeServiceRequest)  returns (common.InvokeServiceResponse){};
+  rpc NodeUpdate(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc NodeUpdateStatus(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc NodeDelete(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc NodeDeleteCollection(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc NodeGet(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc NodeList(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc NodeWatch(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+  rpc NodePatch(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+
+  //Node expansion
+  rpc NodePatchStatus(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+}
