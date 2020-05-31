@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package common;
+
+// protoc --proto_path=. --go_out=plugins=grpc:. github.com/wangrenyi/kmpgo/proto/common/common.proto
+message InvokeServiceRequest {
+  string serviceName = 1;
+  string methodName = 2;
+  int64  timeStamp = 3;
+  string token = 4;
+  string data = 5;
+}
+
+message InvokeServiceResponse {
+  int32 code = 1;
+  string msg = 2;
+  string data = 3;
+}

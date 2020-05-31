@@ -1,2 +1,2 @@
-# cmpgo
-k8s go client develope
+# kmp-go
+kubernetes manage platform -- go client

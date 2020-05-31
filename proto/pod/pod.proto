@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package pod;
+import "github.com/wangrenyi/kmpgo/proto/common/common.proto";
+
+// protoc --proto_path=. --go_out=plugins=grpc:. github.com/wangrenyi/kmpgo/proto/pod/pod.proto
+service PodInterface{
+    rpc PodCreate(common.InvokeServiceRequest)  returns (common.InvokeServiceResponse){};
+    rpc PodUpdate(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+    rpc PodUpdateStatus(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+    rpc PodDelete(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+    rpc PodDeleteCollection(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+    rpc PodGet(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+    rpc PodList(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+    rpc PodWatch(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+    rpc PodPatch(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+    rpc PodGetEphemeralContainers(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+    rpc PodUpdateEphemeralContainers(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+
+    //pod expansion
+    rpc PodBind(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+    rpc PodEvict(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+    rpc PodGetLogs(common.InvokeServiceRequest) returns (common.InvokeServiceResponse){};
+}
